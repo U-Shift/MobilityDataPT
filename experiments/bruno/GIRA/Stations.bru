@@ -1,0 +1,39 @@
+meta {
+  name: Get Stations
+  type: http
+  seq: 2
+}
+
+post {
+  url: https://c2g091p01.emel.pt/ws/graphql
+  body: graphql
+  auth: none
+}
+
+headers {
+  User-Agent: {{user_agent}}
+  ~Authorization: Bearer {{access_token}}
+}
+
+body:graphql {
+  query getStations {
+    getStations {
+      code
+      description
+      latitude
+      longitude
+      name
+      bikes
+      docks
+      serialNumber
+      assetStatus
+    }
+  }
+}
+
+script:pre-request {
+  const token = bru.getVar("accessToken");
+  if (token) {
+    req.setHeader("Authorization", `Bearer ${token}`);
+  }
+}
