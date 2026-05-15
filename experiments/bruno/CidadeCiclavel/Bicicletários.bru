@@ -1,0 +1,22 @@
+meta {
+  name: Bicicletários
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://cidadeciclavel-api.mubi.pt/local/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Origin: https://cidadeciclavel.mubi.pt
+  Referer: https://cidadeciclavel.mubi.pt
+  x-access-token: {{mubi_access_token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

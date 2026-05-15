@@ -1,0 +1,22 @@
+meta {
+  name: Avaliações
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://cidadeciclavel-api.mubi.pt/review
+  body: none
+  auth: inherit
+}
+
+headers {
+  Origin: https://cidadeciclavel.mubi.pt
+  Referer: https://cidadeciclavel.mubi.pt
+  x-access-token: {{mubi_access_token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

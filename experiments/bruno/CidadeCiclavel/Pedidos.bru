@@ -1,0 +1,22 @@
+meta {
+  name: Pedidos
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://cidadeciclavel-api.mubi.pt/requestlocal/
+  body: none
+  auth: inherit
+}
+
+headers {
+  Origin: https://cidadeciclavel.mubi.pt
+  Referer: https://cidadeciclavel.mubi.pt
+  x-access-token: {{mubi_access_token}}
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
