@@ -1,0 +1,77 @@
+---
+title: "Get Started"
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Installation
+
+You can install the development version of `MobilityDataPT` from GitHub with:
+```{r, eval=FALSE}
+# install.packages("remotes")
+remotes::install_github("U-Shift/MobilityDataPT")
+```
+
+# Load the package
+
+```{r eval=FALSE}
+library(MobilityDataPT)
+```
+
+# Key functions
+
+## 1. Administrative Boundaries & Postal Codes
+
+Access Eurostat GISCO postal code datasets and spatial coordinates for Portugal or other EU countries:
+
+```{r}
+# Download and access full postal code database for Portugal
+db <- MobilityDataPT::postal_code_database(cntr_id = "PT", year = 2024, crs = 4326)
+db |>
+  dplyr::select(POSTCODE, LAU_NAME, Shape) |>
+  dplyr::sample_n(5)
+
+# Get spatial coordinates for specific postal codes
+coords <- MobilityDataPT::get_postal_code_coordinates(c("1000-001", "2800-001"))
+coords
+```
+
+## 2. Census Origin-Destination (OD) Data
+
+Retrieve INE Census 2021 Origin-Destination data for home-to-work and home-to-study mobility flows:
+
+```{r}
+# Fetch available region filtering options
+regions <- MobilityDataPT::census_od_regions()
+head(regions)
+
+# Fetch OD mobility records for a specific region ID (e.g., "PT" or "0603")
+od_data <- MobilityDataPT::census_od(id = "PT")
+head(od_data)
+```
+
+## 3. Road & Itinerary Toll Costs
+
+Calculate expected toll costs across vehicle classes (C1, C2, C3, C4) for spatial route itineraries using the Infraestruturas de Portugal API service:
+
+```{r}
+# Define itinerary coordinates
+coords <- matrix(
+  c(
+    -9.173740, 38.675274,
+    -9.174055, 38.676656
+  ),
+  ncol = 2,
+  byrow = TRUE
+)
+sf_itinerary <- sf::st_sf(geometry = sf::st_sfc(sf::st_linestring(coords), crs = 4326))
+
+# Calculate toll costs
+tolls <- MobilityDataPT::tools_for_itinerary(sf_itinerary)
+tolls
+```

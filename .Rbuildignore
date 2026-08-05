@@ -1,3 +1,5 @@
 ^MobilityDataPT\.Rproj$
 ^\.Rproj\.user$
-^experiments/
+^docs$
+^pkgdown$
+^experiments$
