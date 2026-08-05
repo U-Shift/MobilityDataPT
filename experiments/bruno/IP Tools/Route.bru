@@ -1,0 +1,22 @@
+meta {
+  name: Route
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://calculador-percursos.infraestruturasdeportugal.pt/route/v1/driving/-9.155044555664064,38.677469494459366;-9.049644470214846,38.892101707724315?overview=false&alternatives=true&steps=true
+  body: none
+  auth: inherit
+}
+
+params:query {
+  overview: false
+  alternatives: true
+  steps: true
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

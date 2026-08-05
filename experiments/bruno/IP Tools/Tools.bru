@@ -1,0 +1,29 @@
+meta {
+  name: Tools
+  type: http
+  seq: 1
+}
+
+post {
+  url: https://portagens.infraestruturasdeportugal.pt/Portagens.asmx/ObterCustoPortagens
+  body: json
+  auth: inherit
+}
+
+headers {
+  Referer: https://portagens.infraestruturasdeportugal.pt/
+}
+
+body:json {
+  {
+    "coordenadas": [
+      -9.179506301879885, 38.70048234648289,
+      -9.171738624572756, 38.66564196251518
+    ]
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
