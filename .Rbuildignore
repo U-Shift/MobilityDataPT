@@ -3,3 +3,5 @@
 ^docs$
 ^pkgdown$
 ^experiments$
+^vignettes/articles$
+^_pkgdown\.yml$

@@ -101,6 +101,7 @@ postal_code_database <- function(cntr_id = "PT", year = 2024, crs = 4326, downlo
 #'
 #' @seealso \code{MobilityDataPT::postal_code_database()}
 #'
+#' @importFrom tidyselect any_of
 #' @export
 get_postal_code_coordinates <- function(postal_codes = NULL, cntr_id = "PT", year = 2024, crs = 4326, download_dir = NULL) {
     db <- postal_code_database(cntr_id = cntr_id, year = year, crs = crs, download_dir = download_dir)
