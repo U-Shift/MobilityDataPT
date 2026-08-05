@@ -5,3 +5,4 @@
 ^experiments$
 ^vignettes/articles$
 ^_pkgdown\.yml$
+^\.github$
