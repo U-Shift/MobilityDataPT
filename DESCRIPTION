@@ -1,0 +1,11 @@
+Package: MobilityDataPT
+Title: Get mobility related data for Portugal
+Version: 0.0.0
+Authors@R: 
+    person(c("Gonçalo", "F."), "Matos", , "goncaloafmatos@tecnico.pt", role = c("aut", "cre"),
+           comment = c(ORCID = "0009-0001-3489-1732"))
+Description: This package provides a collection of methods to get and mobility related data for Portugal.
+License: GPL
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
