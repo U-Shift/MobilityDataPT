@@ -1,0 +1,25 @@
+meta {
+  name: OD Residência/Trabalho (Residência Samouco)
+  type: http
+  seq: 2
+}
+
+get {
+  url: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011702&lang=PT&id=0011702&Dim1=T&Dim2=150202
+  body: none
+  auth: inherit
+}
+
+params:query {
+  op: 2
+  varcd: 0011702
+  lang: PT
+  id: 0011702
+  Dim1: T
+  Dim2: 150202
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
