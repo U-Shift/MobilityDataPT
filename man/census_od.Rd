@@ -32,7 +32,7 @@ Retrieves Census Origin-Destination (Home/Work & Study) data from INE for a give
 Refer to \href{https://tabulador.ine.pt/indicador/?id=0011702}{INE website} to access the indicator online.
 }
 \examples{
-\dontshow{if (tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 2)); close(con); TRUE}, error = function(e) FALSE)) withAutoprint(\{ # examplesIf}
+\dontshow{if (tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)) withAutoprint(\{ # examplesIf}
 od_data <- MobilityDataPT::census_od(id = "PT")
 od_data |> dplyr::sample_n(5)
 
