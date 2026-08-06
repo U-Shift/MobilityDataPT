@@ -1,0 +1,24 @@
+meta {
+  name: OD Residência/Trabalho
+  type: http
+  seq: 1
+}
+
+get {
+  url: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011702&lang=PT&id=0011702&Dim1=T&Dim2=3
+  body: none
+  auth: inherit
+}
+
+params:query {
+  op: 2
+  varcd: 0011702
+  lang: PT
+  id: 0011702
+  Dim1: T
+  Dim2: 3
+}
+
+settings {
+  encodeUrl: true
+}

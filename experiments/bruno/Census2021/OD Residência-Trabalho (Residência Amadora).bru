@@ -1,0 +1,25 @@
+meta {
+  name: OD Residência/Trabalho (Residência Amadora)
+  type: http
+  seq: 3
+}
+
+get {
+  url: https://www.ine.pt/ine/json_indicador/pindica.jsp?op=2&varcd=0011702&lang=PT&id=0011702&Dim1=T&Dim2=1115
+  body: none
+  auth: inherit
+}
+
+params:query {
+  op: 2
+  varcd: 0011702
+  lang: PT
+  id: 0011702
+  Dim1: T
+  Dim2: 1115
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

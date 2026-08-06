@@ -1,0 +1,20 @@
+meta {
+  name: Metadata
+  type: http
+  seq: 4
+}
+
+get {
+  url: https://www.ine.pt/ine/json_indicador/pindicaMeta.jsp?varcd=0011702&lang=PT
+  body: none
+  auth: inherit
+}
+
+params:query {
+  varcd: 0011702
+  lang: PT
+}
+
+settings {
+  encodeUrl: true
+}

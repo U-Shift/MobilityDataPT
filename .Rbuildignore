@@ -1,0 +1,10 @@
+^MobilityDataPT\.Rproj$
+^\.Rproj\.user$
+^docs$
+^pkgdown$
+^experiments$
+^vignettes/articles$
+^_pkgdown\.yml$
+^\.github$
+LICENSE.md
+CITATION.cff

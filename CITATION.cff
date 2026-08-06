@@ -1,0 +1,17 @@
+# This CITATION.cff file was generated with cffinit.
+# Visit https://bit.ly/cffinit to generate yours today!
+
+cff-version: 1.2.0
+title: MobilityDataPT
+message: 'If you use this software, please cite it as below.'
+type: software
+authors:
+  - family-names: Matos
+    given-names: Gonçalo F.
+    orcid: 'https://orcid.org/0009-0001-3489-1732'
+repository-code: 'https://github.com/U-Shift/MobilityDataPT'
+url: 'https://u-shift.github.io/MobilityDataPT/'
+abstract: 'This package provides a collection of methods to get mobility related data for Portugal.'
+license: GPL-3.0
+version: '0.0'
+date-released: '2026-08-05'

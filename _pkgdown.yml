@@ -1,0 +1,28 @@
+url: https://u-shift.github.io/MobilityDataPT/
+template:
+  bootstrap: 5
+  light-switch: true
+  math-rendering: mathjax
+  bslib:
+    primary: "#15AF97FF"
+navbar:
+  structure:
+    left: [intro, reference, articles]
+reference:
+  - title: Administrative Boundaries
+    contents:
+    - postal_code_database
+    - get_postal_code_coordinates
+  - title: Census
+    contents:
+    - census_od_regions
+    - census_od
+  - title: Road data
+    contents:
+    - tools_for_itinerary
+articles:
+  - title: Articles
+    navbar: ~
+    contents:
+    - articles/data_sources
+
