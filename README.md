@@ -28,22 +28,8 @@ For more details on the package and how to get started, please visit the [Get st
 
 ## Data Sources
 
-This package interfaces with and retrieves data from public APIs and open data repositories provided by official entities:
+For information regarding the official open data repositories, public APIs, and terms of service used by this package, please see the [Data Sources](https://u-shift.github.io/MobilityDataPT/articles/data_sources.html) page.
 
-
-- **[Eurostat GISCO](https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/postal-codes)**: Spatial boundaries and point locations of postal codes
-
-> `MobilityDataPT::postal_code_database()`
-> `MobilityDataPT::get_postal_code_coordinates()`
-
-- **[Instituto Nacional de Estatística (INE)](https://www.ine.pt/)**: 2021 Census Origin-Destination (Home-to-Work & Home-to-Study) mobility flows
-
-> `MobilityDataPT::census_od_regions()`
-> `MobilityDataPT::census_od()`
-
-- **[Infraestruturas de Portugal](https://portagens.infraestruturasdeportugal.pt/)**: Toll calculation services across Portuguese highway networks
-
-> `MobilityDataPT::tools_for_itinerary()`
 
 
 

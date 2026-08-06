@@ -34,6 +34,9 @@ An \code{sf} object containing matching postal code records and geometries.
 Retrieves spatial coordinates and geometry for specific postal code(s) from the
 Eurostat GISCO postal code database.
 }
+\note{
+Data source: Eurostat GISCO Postal Codes (\url{https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/postal-codes}).
+}
 \examples{
 MobilityDataPT::get_postal_code_coordinates(c("1000-001", "2800-001"))
 

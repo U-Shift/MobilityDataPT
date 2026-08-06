@@ -5,11 +5,9 @@ template:
   math-rendering: mathjax
   bslib:
     primary: "#15AF97FF"
-
 navbar:
   structure:
-   left:  [intro, reference]
-
+    left: [intro, reference, articles]
 reference:
   - title: Administrative Boundaries
     contents:
@@ -22,3 +20,9 @@ reference:
   - title: Road data
     contents:
     - tools_for_itinerary
+articles:
+  - title: Articles
+    navbar: ~
+    contents:
+    - articles/data_sources
+

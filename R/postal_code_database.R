@@ -4,6 +4,8 @@
 #' Files are cached locally in the directory specified by the \code{MOBILITYDATAPT_DOWNLOAD_DIRECTORY}
 #' environment variable, defaulting to \code{~/.local/share/R/MobilityDataPT}.
 #'
+#' @note Data source: Eurostat GISCO Postal Codes (\url{https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/postal-codes}).
+#'
 #' @param cntr_id Two-letter country code to filter by (default \code{"PT"}). Pass \code{NA} or \code{NULL}
 #'   to return all countries present in the dataset.
 #' @param year Release year of the dataset. Allowed values are \code{2020} or \code{2024} (default \code{2024}).
@@ -84,7 +86,10 @@ postal_code_database <- function(cntr_id = "PT", year = 2024, crs = 4326, downlo
 #' Retrieves spatial coordinates and geometry for specific postal code(s) from the
 #' Eurostat GISCO postal code database.
 #'
+#' @note Data source: Eurostat GISCO Postal Codes (\url{https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/postal-codes}).
+#'
 #' @param postal_codes Character vector of postal code identifiers (e.g., \code{"1000-001"} or \code{c("1000-001", "2800-001")}).
+
 #'   If \code{NULL}, returns coordinates for all postal codes in the dataset.
 #' @param cntr_id Two-letter country code to filter by (default \code{"PT"}). Pass \code{NA} or \code{NULL}
 #'   to return all countries.

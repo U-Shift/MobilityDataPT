@@ -13,6 +13,9 @@ A \code{data.frame} with columns \code{id} and \code{name}.
 Queries the INE metadata API for the available regional filtering options
 available for \code{MobilityDataPT::census_od()}.
 }
+\note{
+Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/}).
+}
 \examples{
 \dontshow{if (tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)) withAutoprint(\{ # examplesIf}
 regions <- MobilityDataPT::census_od_regions()

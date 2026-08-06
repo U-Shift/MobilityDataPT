@@ -31,6 +31,9 @@ Retrieves Census Origin-Destination (Home/Work & Study) data from INE for a give
 \details{
 Refer to \href{https://tabulador.ine.pt/indicador/?id=0011702}{INE website} to access the indicator online.
 }
+\note{
+Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/}).
+}
 \examples{
 \dontshow{if (tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)) withAutoprint(\{ # examplesIf}
 od_data <- MobilityDataPT::census_od(id = "PT")

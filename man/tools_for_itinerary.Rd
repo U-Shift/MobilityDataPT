@@ -15,11 +15,11 @@ A named list containing toll costs in Euros for each vehicle class (\code{C1}, \
 \description{
 Encapsulates the calculation functionality of the web service provided by
 \href{https://portagens.infraestruturasdeportugal.pt/}{Infraestruturas de Portugal}.
-Queries their API to calculate expected toll costs across vehicle classes (C1, C2, C3, C4)
+Queries IP API to calculate expected toll costs across vehicle classes (C1, C2, C3, C4)
 for a given spatial itinerary.
 }
 \note{
-Terms of service and usage rights of the Infraestruturas de Portugal web service apply.
+Data source: Infraestruturas de Portugal (\url{https://portagens.infraestruturasdeportugal.pt/}). Terms of service apply.
 }
 \examples{
 sf_itinerary <- sf::st_read(system.file("extdata/samples",
