@@ -1,0 +1,75 @@
+# MobilityDataPT
+
+**MobilityDataPT** package provides a collection of methods to get and
+mobility related data for Portugal.
+
+## Installation
+
+You can install the development version of **MobilityDataPT** from
+[GitHub](https://github.com/) with:
+
+``` r
+
+# install.packages("remotes")
+remotes::install_github("U-Shift/MobilityDataPT")
+```
+
+## Load the package
+
+``` r
+
+library(MobilityDataPT)
+```
+
+## Get started
+
+For more details on the package and how to get started, please visit the
+[Get
+started](https://u-shift.github.io/MobilityDataPT/articles/MobilityDataPT.html)
+page.
+
+## Data Sources
+
+For information regarding the official open data repositories, public
+APIs, and terms of service used by this package, please see the [Data
+Sources](https://u-shift.github.io/MobilityDataPT/articles/data_sources.html)
+page.
+
+## Acknowledgement
+
+**MobilityDataPT** is developed and maintained by
+[U-Shift](https://ushift.tecnico.ulisboa.pt) urban mobility research
+group, part of [CERIS](https://ceris.pt/) research unit, at [Instituto
+Superior Técnico](https://tecnico.ulisboa.pt/pt/), Lisbon, Portugal.
+
+  
+
+![](reference/figures/logo_acknowledgement.png)
+
+# Package index
+
+## Administrative Boundaries
+
+- [`postal_code_database()`](https://u-shift.github.io/MobilityDataPT/reference/postal_code_database.md)
+  : Access Eurostat GISCO Postal Code database
+- [`get_postal_code_coordinates()`](https://u-shift.github.io/MobilityDataPT/reference/get_postal_code_coordinates.md)
+  : Get Postal Code coordinates
+
+## Census
+
+- [`census_od_regions()`](https://u-shift.github.io/MobilityDataPT/reference/census_od_regions.md)
+  : Fetch Census Origin-Destination available regions
+- [`census_od()`](https://u-shift.github.io/MobilityDataPT/reference/census_od.md)
+  : Fetch Census Origin-Destination Data
+
+## Road data
+
+- [`tools_for_itinerary()`](https://u-shift.github.io/MobilityDataPT/reference/tools_for_itinerary.md)
+  : Compute toll costs for an itinerary
+
+# Articles
+
+### Articles
+
+- [Data
+  Sources](https://u-shift.github.io/MobilityDataPT/articles/data_sources.md):
