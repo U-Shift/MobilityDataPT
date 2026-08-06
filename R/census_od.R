@@ -5,7 +5,7 @@
 #'
 #' @return A \code{data.frame} with columns \code{id} and \code{name}.
 #'
-#' @examplesIf tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 2)); close(con); TRUE}, error = function(e) FALSE)
+#' @examplesIf tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)
 #' regions <- MobilityDataPT::census_od_regions()
 #' head(regions)
 #'
@@ -88,7 +88,7 @@ census_od_regions <- function() {
 #'     \item \code{Periodo}: Reference period (2011, 2021)
 #'   }
 #'
-#' @examplesIf tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 2)); close(con); TRUE}, error = function(e) FALSE)
+#' @examplesIf tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)
 #' od_data <- MobilityDataPT::census_od(id = "PT")
 #' od_data |> dplyr::sample_n(5)
 #'

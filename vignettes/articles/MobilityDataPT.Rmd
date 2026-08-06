@@ -60,16 +60,9 @@ head(od_data)
 Calculate expected toll costs across vehicle classes (C1, C2, C3, C4) for spatial route itineraries using the Infraestruturas de Portugal API service:
 
 ```{r}
-# Define itinerary coordinates
-coords <- matrix(
-  c(
-    -9.173740, 38.675274,
-    -9.174055, 38.676656
-  ),
-  ncol = 2,
-  byrow = TRUE
-)
-sf_itinerary <- sf::st_sf(geometry = sf::st_sfc(sf::st_linestring(coords), crs = 4326))
+sf_itinerary <- sf::st_read(system.file("extdata/samples",
+  "tool_itinerary_25AbrilBridge.gpkg", package = "MobilityDataPT"
+), quiet = TRUE)
 
 # Calculate toll costs
 tolls <- MobilityDataPT::tools_for_itinerary(sf_itinerary)
