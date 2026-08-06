@@ -5,9 +5,8 @@
 #'
 #' @return A \code{data.frame} with columns \code{id} and \code{name}.
 #'
-#' @examples
+#' @examplesIf curl::has_internet()
 #' regions <- MobilityDataPT::census_od_regions()
-#'
 #' head(regions)
 #'
 #' @seealso \code{MobilityDataPT::census_od()}
@@ -89,10 +88,11 @@ census_od_regions <- function() {
 #'     \item \code{Periodo}: Reference period (2011, 2021)
 #'   }
 #'
-#' @examples
+#' @examplesIf curl::has_internet()
 #' od_data <- MobilityDataPT::census_od(id = "PT")
-#' 
 #' od_data |> dplyr::sample_n(5)
+#'
+#'
 #'
 #' @seealso \code{MobilityDataPT::census_od_regions()}
 #'
