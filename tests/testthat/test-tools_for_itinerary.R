@@ -38,8 +38,7 @@ test_that("tools_for_itinerary returns expected toll costs data.frame", {
 
     result <- tools_for_itinerary(sf_itinerary)
 
-    expect_s3_class(result, "data.frame")
+    expect_type(result, "list")
     expect_named(result, c("C1", "C2", "C3", "C4"))
-    expect_equal(nrow(result), 1)
-    expect_true(all(result > 0))
+    expect_true(all(unlist(result) > 0))
 })

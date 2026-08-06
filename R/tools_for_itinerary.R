@@ -9,8 +9,7 @@
 #'
 #' @param sf_itinerary An \code{sf} object containing route geometry (\code{LINESTRING} coordinates).
 #'
-#' @return A \code{data.frame} with columns \code{C1}, \code{C2}, \code{C3}, and \code{C4}
-#'   containing toll costs in Euros for each vehicle class.
+#' @return A named list containing toll costs in Euros for each vehicle class (\code{C1}, \code{C2}, \code{C3}, \code{C4}).
 #' @examples
 #' sf_itinerary <- sf::st_read(system.file("extdata/samples",
 #'     "tool_itinerary_25AbrilBridge.gpkg",
@@ -34,7 +33,6 @@ tools_for_itinerary <- function(sf_itinerary) {
         as.matrix() |>
         jsonlite::toJSON(auto_unBOX = FALSE)
 
-
     # Make POST request to https://portagens.infraestruturasdeportugal.pt/Portagens.asmx/ObterCustoPortagens, with the following attributes
     # JSON body: {"coordenadas": [[x1, y1], [x2, y2], ...]]}
     # Headers: Referer: https://portagens.infraestruturasdeportugal.pt/
@@ -47,8 +45,8 @@ tools_for_itinerary <- function(sf_itinerary) {
     # Example response: {"d":[2.25,4.85,6.55,8.45]}
     costs <- jsonlite::fromJSON(httr::content(response, "text"))
 
-    # Convert to data.frame with columns: C1, C2, C3 and C4
-    costs_df <- as.data.frame(t(costs$d))
-    colnames(costs_df) <- c("C1", "C2", "C3", "C4")
-    return(costs_df)
+    # Convert to named list with elements: C1, C2, C3 and C4
+    costs_list <- as.list(stats::setNames(as.numeric(costs$d), c("C1", "C2", "C3", "C4")))
+    return(costs_list)
 }
+

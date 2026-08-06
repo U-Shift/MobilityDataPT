@@ -10,8 +10,7 @@ tools_for_itinerary(sf_itinerary)
 \item{sf_itinerary}{An \code{sf} object containing route geometry (\code{LINESTRING} coordinates).}
 }
 \value{
-A \code{data.frame} with columns \code{C1}, \code{C2}, \code{C3}, and \code{C4}
-containing toll costs in Euros for each vehicle class.
+A named list containing toll costs in Euros for each vehicle class (\code{C1}, \code{C2}, \code{C3}, \code{C4}).
 }
 \description{
 Encapsulates the calculation functionality of the web service provided by
