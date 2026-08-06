@@ -1,13 +1,13 @@
 library(testthat)
 
 ine_is_reachable <- function() {
-    if (!curl::has_internet()) return(FALSE)
     tryCatch({
         con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 2))
         close(con)
         TRUE
     }, error = function(e) FALSE)
 }
+
 
 test_that("census_od_regions fetches regions metadata as a data.frame with id and name", {
     skip_on_cran()
