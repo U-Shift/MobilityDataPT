@@ -69,8 +69,7 @@
 
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
-
-      <h1>Get Started</h1>
+      <img src="../logo.png" class="logo" alt=""><h1>Get Started</h1>
             
       
       <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/main/vignettes/articles/MobilityDataPT.Rmd" class="external-link"><code>vignettes/articles/MobilityDataPT.Rmd</code></a></small>
@@ -152,7 +151,7 @@ home-to-study mobility flows:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch available region filtering options</span></span>
 <span><span class="va">regions</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/census_od_regions.html">census_od_regions</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; DataExtracao: 2026-08-07T12:01:04.544+01:00</span></span>
+<span><span class="co">#&gt; DataExtracao: 2026-08-07T12:17:22.253+01:00</span></span>
 <span><span class="co">#&gt; DataUltimoAtualizacao: 2022-11-23</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">regions</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       id              name</span></span>
@@ -167,7 +166,7 @@ home-to-study mobility flows:</p>
 <span><span class="va">od_data</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/census_od.html">census_od</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"PT"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021</span></span>
 <span><span class="co">#&gt; MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&amp;lingua=PT</span></span>
-<span><span class="co">#&gt; DataExtracao: 2026-08-07T12:01:06.115+01:00</span></span>
+<span><span class="co">#&gt; DataExtracao: 2026-08-07T12:17:24.018+01:00</span></span>
 <span><span class="co">#&gt; DataUltimoAtualizacao: 2022-11-23</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">od_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5                  dim_5_t</span></span>
