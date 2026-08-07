@@ -6,7 +6,7 @@
 [![codecov](https://codecov.io/gh/U-Shift/MobilityDataPT/graph/badge.svg?token=IK34VDXDZ5)](https://codecov.io/gh/U-Shift/MobilityDataPT)
 <!-- badges: end -->
 
-**MobilityDataPT** package provides a collection of methods to get and mobility related data for Portugal.
+**MobilityDataPT** package provides a collection of methods to get mobility related data for Portugal.
 
 ## Installation
 
