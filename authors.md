@@ -8,7 +8,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/U-Shift/MobilityDataPT/blob/v0.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/U-Shift/MobilityDataPT/blob/main/DESCRIPTION)
 
 Matos GF (2026). *MobilityDataPT: Get mobility related data for
 Portugal*. R package version 0.0,
