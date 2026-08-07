@@ -1,6 +1,6 @@
 # MobilityDataPT
 
-**MobilityDataPT** package provides a collection of methods to get and
+**MobilityDataPT** package provides a collection of methods to get
 mobility related data for Portugal.
 
 ## Installation

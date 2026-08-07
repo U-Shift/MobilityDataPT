@@ -75,17 +75,10 @@ available for <code><a href="census_od.html">MobilityDataPT::census_od()</a></co
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">regions</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu">census_od_regions</span><span class="op">(</span><span class="op">)</span></span></span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> DataExtracao: 2026-08-07T12:34:10.849+01:00</span>
-<span class="r-msg co"><span class="r-pr">#&gt;</span> DataUltimoAtualizacao: 2022-11-23</span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="cn">FALSE</span><span class="op">)</span> <span class="op">{</span> <span class="co"># tryCatch({     con &lt;- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10))     close(con)     TRUE }, error = function(e) FALSE)</span></span></span>
+<span class="r-in"><span><span class="va">regions</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu">census_od_regions</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">regions</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>       id              name</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1     PT          Portugal</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2      1        Continente</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3     11             Norte</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4    111        Alto Minho</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5   1601 Arcos de Valdevez</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 6 160101  Aboim das Choças</span>
+<span class="r-in"><span><span class="op">}</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
