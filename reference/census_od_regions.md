@@ -26,15 +26,8 @@ Data source: Instituto Nacional de Estatística (INE)
 ## Examples
 
 ``` r
+if (FALSE) { # tryCatch({     con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10))     close(con)     TRUE }, error = function(e) FALSE)
 regions <- MobilityDataPT::census_od_regions()
-#> DataExtracao: 2026-08-07T12:16:07.551+01:00
-#> DataUltimoAtualizacao: 2022-11-23
 head(regions)
-#>       id              name
-#> 1     PT          Portugal
-#> 2      1        Continente
-#> 3     11             Norte
-#> 4    111        Alto Minho
-#> 5   1601 Arcos de Valdevez
-#> 6 160101  Aboim das Choças
+}
 ```
