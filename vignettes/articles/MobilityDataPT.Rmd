@@ -7,6 +7,12 @@ knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
 )
+
+ine_is_reachable <- tryCatch({
+  con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 2))
+  close(con)
+  TRUE
+}, error = function(e) FALSE)
 ```
 
 # Installation
@@ -45,7 +51,7 @@ coords
 
 Retrieve INE Census 2021 Origin-Destination data for home-to-work and home-to-study mobility flows:
 
-```{r}
+```{r eval = ine_is_reachable}
 # Fetch available region filtering options
 regions <- MobilityDataPT::census_od_regions()
 head(regions)
@@ -61,7 +67,8 @@ Calculate expected toll costs across vehicle classes (C1, C2, C3, C4) for spatia
 
 ```{r}
 sf_itinerary <- sf::st_read(system.file("extdata/samples",
-  "tool_itinerary_25AbrilBridge.gpkg", package = "MobilityDataPT"
+  "tool_itinerary_25AbrilBridge.gpkg",
+  package = "MobilityDataPT"
 ), quiet = TRUE)
 
 # Calculate toll costs
