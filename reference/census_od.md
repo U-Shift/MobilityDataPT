@@ -60,24 +60,11 @@ Data source: Instituto Nacional de Estatística (INE)
 ## Examples
 
 ``` r
+if (FALSE) { # tryCatch({     con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10))     close(con)     TRUE }, error = function(e) FALSE)
 od_data <- MobilityDataPT::census_od(id = "PT")
-#> IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021
-#> MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&lingua=PT
-#> DataExtracao: 2026-08-07T11:52:49.038+01:00
-#> DataUltimoAtualizacao: 2022-11-23
 od_data |> dplyr::sample_n(5)
-#>   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5             dim_5_t
-#> 1     PT Portugal     1       H     1 Empregada 41304            Gondomar
-#> 2     PT Portugal     T      HM     1 Empregada 41114 Vila Franca de Xira
-#> 3     PT Portugal     1       H     2 Estudante 41317   Vila Nova de Gaia
-#> 4     PT Portugal     1       H     2 Estudante 41013     Pedrógão Grande
-#> 5     PT Portugal     T      HM     1 Empregada 41310             Paredes
-#>   ind_string valor Periodo
-#> 1      4 671  4671    2021
-#> 2     14 220 14220    2021
-#> 3      1 606  1606    2011
-#> 4         78    78    2011
-#> 5      7 728  7728    2011
 
 
+
+}
 ```
