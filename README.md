@@ -1,4 +1,4 @@
-# MobilityDataPT 
+# MobilityDataPT <img align="right" src="man/figures/logo.png" alt="logo" width="180">
 
 <!-- badges: start -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21837258.svg)](https://doi.org/10.5281/zenodo.21837258)
