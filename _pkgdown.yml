@@ -7,7 +7,7 @@ template:
     primary: "#1cabceFF"
 navbar:
   structure:
-    left: [intro, reference, articles]
+    left: [intro, reference, articles, news]
 reference:
   - title: Administrative Boundaries
     contents:
