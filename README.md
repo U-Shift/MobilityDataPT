@@ -3,7 +3,7 @@
 <!-- badges: start -->
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21837258.svg)](https://doi.org/10.5281/zenodo.21837258)
 [![](https://github.com/U-Shift/MobilityDataPT/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/U-Shift/MobilityDataPT/actions/workflows/R-CMD-check.yaml) 
-[![codecov](https://codecov.io/gh/U-Shift/MobilityDataPT/graph/badge.svg?token=IK34VDXDZ5)](https://codecov.io/gh/U-Shift/MobilityDataPT)
+[![codecov](https://codecov.io/gh/U-Shift/MobilityDataPT/graph/badge.svg?token=IK34VDXDZ5)](https://app.codecov.io/gh/U-Shift/MobilityDataPT)
 <!-- badges: end -->
 
 **MobilityDataPT** package provides a collection of methods to get mobility related data for Portugal.

@@ -3,7 +3,7 @@
 #' Queries the INE metadata API for the available regional filtering options
 #' available for \code{MobilityDataPT::census_od()}.
 #'
-#' @note Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/}).
+#' @note Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/xportal/xmain?xpgid=ine_main&xpid=INE}).
 #'
 #' @return A \code{data.frame} with columns \code{id} and \code{name}.
 #'
@@ -73,7 +73,7 @@ census_od_regions <- function() {
 #'
 #' Refer to \href{https://tabulador.ine.pt/indicador/?id=0011702}{INE website} to access the indicator online.
 #'
-#' @note Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/}).
+#' @note Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/xportal/xmain?xpgid=ine_main&xpid=INE}).
 #'
 #' @param id Region category filter ID (default \code{"PT"}). See \code{MobilityDataPT::census_od_regions()} for available IDs.
 
