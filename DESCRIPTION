@@ -1,6 +1,6 @@
 Package: MobilityDataPT
 Title: Get mobility related data for Portugal
-Version: 0.0
+Version: 1.0
 Authors@R: 
     person(c("Gonçalo", "F."), "Matos", , "goncaloafmatos@tecnico.pt", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0001-3489-1732"))
