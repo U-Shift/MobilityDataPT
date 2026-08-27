@@ -4,7 +4,7 @@ Version: 1.0
 Authors@R: 
     person(c("Gonçalo", "F."), "Matos", , "goncaloafmatos@tecnico.pt", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0001-3489-1732"))
-Description: This package provides a collection of methods to get mobility related data for Portugal.
+Description: A collection of methods to get mobility related data for Portugal.
 License: GPL
 URL: https://github.com/U-Shift/MobilityDataPT, 
     https://u-shift.github.io/MobilityDataPT/
