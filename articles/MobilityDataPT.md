@@ -78,11 +78,38 @@ home-to-study mobility flows:
 
 # Fetch available region filtering options
 regions <- MobilityDataPT::census_od_regions()
+#> DataExtracao: 2026-08-27T12:20:20.423+01:00
+#> DataUltimoAtualizacao: 2022-11-23
 head(regions)
+#>       id              name
+#> 1     PT          Portugal
+#> 2      1        Continente
+#> 3     11             Norte
+#> 4    111        Alto Minho
+#> 5   1601 Arcos de Valdevez
+#> 6 160101  Aboim das Choças
 
 # Fetch OD mobility records for a specific region ID (e.g., "PT" or "0603")
 od_data <- MobilityDataPT::census_od(id = "PT")
+#> IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021
+#> MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&lingua=PT
+#> DataExtracao: 2026-08-27T12:20:21.982+01:00
+#> DataUltimoAtualizacao: 2022-11-23
 head(od_data)
+#>   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5                  dim_5_t
+#> 1     PT Portugal     2       M     2 Estudante 40511      Vila Velha de Ródão
+#> 2     PT Portugal     2       M     2 Estudante 44401   Santa Cruz da Graciosa
+#> 3     PT Portugal     T      HM     2 Estudante 44401   Santa Cruz da Graciosa
+#> 4     PT Portugal     1       H     2 Estudante 40404 Freixo de Espada à Cinta
+#> 5     PT Portugal     1       H     2 Estudante 40412                  Vinhais
+#> 6     PT Portugal     1       H     2 Estudante 44202                 Nordeste
+#>   ind_string valor Periodo
+#> 1          1     1    2011
+#> 2          1     1    2011
+#> 3          1     1    2011
+#> 4          2     2    2011
+#> 5          2     2    2011
+#> 6          2     2    2011
 ```
 
 ### 3. Road & Itinerary Toll Costs

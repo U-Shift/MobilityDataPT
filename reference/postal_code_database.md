@@ -63,30 +63,32 @@ Data source: Eurostat GISCO Postal Codes
 ## Examples
 
 ``` r
+# \donttest{
 db <- MobilityDataPT::postal_code_database()
 
 db |> dplyr::select(POSTCODE, LAU_NAME, Shape) |> dplyr::sample_n(5)
 #> Simple feature collection with 5 features and 2 fields
 #> Geometry type: POINT
 #> Dimension:     XY
-#> Bounding box:  xmin: -9.097305 ymin: 38.62705 xmax: -8.624415 ymax: 41.70859
+#> Bounding box:  xmin: -9.351696 ymin: 38.62705 xmax: -8.86759 ymax: 39.10543
 #> Geodetic CRS:  WGS 84
 #>   POSTCODE
-#> 1 3800-376
-#> 2 4900-861
-#> 3 4450-770
-#> 4 2695-725
-#> 5 2835-530
-#>                                                                              LAU_NAME
-#> 1                                                                            Esgueira
-#> 2 União das freguesias de Viana do Castelo (Santa Maria Maior e Monserrate) e Meadela
-#> 3                               União das freguesias de Matosinhos e Leça da Palmeira
-#> 4           União das freguesias de Santa Iria de Azoia, São João da Talha e Bobadela
-#> 5                                                           Santo António da Charneca
+#> 1 2695-725
+#> 2 2835-530
+#> 3 2050-025
+#> 4 2705-906
+#> 5 2565-394
+#>                                                                    LAU_NAME
+#> 1 União das freguesias de Santa Iria de Azoia, São João da Talha e Bobadela
+#> 2                                                 Santo António da Charneca
+#> 3                                                          Aveiras de Baixo
+#> 4                    União das freguesias de São João das Lampas e Terrugem
+#> 5                                         Santa Maria, São Pedro e Matacães
 #>                        Shape
-#> 1 POINT (-8.624415 40.66091)
-#> 2 POINT (-8.807337 41.70859)
-#> 3 POINT (-8.701731 41.19593)
-#> 4 POINT (-9.097305 38.82328)
-#> 5 POINT (-9.013116 38.62705)
+#> 1 POINT (-9.097305 38.82328)
+#> 2 POINT (-9.013116 38.62705)
+#> 3  POINT (-8.86759 39.10543)
+#> 4  POINT (-9.351696 38.8414)
+#> 5 POINT (-9.211773 39.09116)
+# }
 ```

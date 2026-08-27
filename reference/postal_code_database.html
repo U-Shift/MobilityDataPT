@@ -49,7 +49,7 @@ environment variable, defaulting to ~/.local/share/R/MobilityDataPT."><meta prop
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Access Eurostat GISCO Postal Code database</h1>
-      <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/v1.0/R/postal_code_database.R" class="external-link"><code>R/postal_code_database.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/main/R/postal_code_database.R" class="external-link"><code>R/postal_code_database.R</code></a></small>
       <div class="d-none name"><code>postal_code_database.Rd</code></div>
     </div>
 
@@ -108,32 +108,34 @@ Returned columns include:</p><ul><li><p><code>POSTCODE</code>: Postal code ident
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">db</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu">postal_code_database</span><span class="op">(</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="va">db</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu">postal_code_database</span><span class="op">(</span><span class="op">)</span></span></span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="va">db</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">POSTCODE</span>, <span class="va">LAU_NAME</span>, <span class="va">Shape</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu">dplyr</span><span class="fu">::</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/sample_n.html" class="external-link">sample_n</a></span><span class="op">(</span><span class="fl">5</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 5 features and 2 fields</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Dimension:     XY</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -9.097305 ymin: 38.62705 xmax: -8.624415 ymax: 41.70859</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Bounding box:  xmin: -9.351696 ymin: 38.62705 xmax: -8.86759 ymax: 39.10543</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geodetic CRS:  WGS 84</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>   POSTCODE</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 3800-376</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 4900-861</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 4450-770</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2695-725</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2835-530</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                              LAU_NAME</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1                                                                            Esgueira</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 União das freguesias de Viana do Castelo (Santa Maria Maior e Monserrate) e Meadela</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3                               União das freguesias de Matosinhos e Leça da Palmeira</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4           União das freguesias de Santa Iria de Azoia, São João da Talha e Bobadela</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                                           Santo António da Charneca</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 2695-725</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 2835-530</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3 2050-025</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4 2705-906</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 2565-394</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span>                                                                    LAU_NAME</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 União das freguesias de Santa Iria de Azoia, São João da Talha e Bobadela</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2                                                 Santo António da Charneca</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3                                                          Aveiras de Baixo</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4                    União das freguesias de São João das Lampas e Terrugem</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5                                         Santa Maria, São Pedro e Matacães</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>                        Shape</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 1 POINT (-8.624415 40.66091)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 2 POINT (-8.807337 41.70859)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 3 POINT (-8.701731 41.19593)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 4 POINT (-9.097305 38.82328)</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> 5 POINT (-9.013116 38.62705)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 1 POINT (-9.097305 38.82328)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 2 POINT (-9.013116 38.62705)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 3  POINT (-8.86759 39.10543)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 4  POINT (-9.351696 38.8414)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> 5 POINT (-9.211773 39.09116)</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>

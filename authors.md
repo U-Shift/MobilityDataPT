@@ -8,14 +8,14 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/U-Shift/MobilityDataPT/blob/v1.0/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/U-Shift/MobilityDataPT/blob/main/DESCRIPTION)
 
-Matos GF (2026). *MobilityDataPT: Get mobility related data for
+Matos GF (2026). *MobilityDataPT: Get Mobility Related Data for
 Portugal*. R package version 1.0,
 <https://github.com/U-Shift/MobilityDataPT>.
 
     @Manual{,
-      title = {MobilityDataPT: Get mobility related data for Portugal},
+      title = {MobilityDataPT: Get Mobility Related Data for Portugal},
       author = {Gonçalo F. Matos},
       year = {2026},
       note = {R package version 1.0},

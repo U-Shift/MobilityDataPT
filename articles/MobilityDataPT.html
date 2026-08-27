@@ -78,7 +78,7 @@
       <img src="../logo.png" class="logo" alt=""><h1>Get Started</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/v1.0/vignettes/articles/MobilityDataPT.Rmd" class="external-link"><code>vignettes/articles/MobilityDataPT.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/main/vignettes/articles/MobilityDataPT.Rmd" class="external-link"><code>vignettes/articles/MobilityDataPT.Rmd</code></a></small>
       <div class="d-none name"><code>MobilityDataPT.Rmd</code></div>
     </div>
 
@@ -157,11 +157,38 @@ home-to-study mobility flows:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch available region filtering options</span></span>
 <span><span class="va">regions</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/census_od_regions.html">census_od_regions</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co">#&gt; DataExtracao: 2026-08-27T12:20:20.423+01:00</span></span>
+<span><span class="co">#&gt; DataUltimoAtualizacao: 2022-11-23</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">regions</span><span class="op">)</span></span>
+<span><span class="co">#&gt;       id              name</span></span>
+<span><span class="co">#&gt; 1     PT          Portugal</span></span>
+<span><span class="co">#&gt; 2      1        Continente</span></span>
+<span><span class="co">#&gt; 3     11             Norte</span></span>
+<span><span class="co">#&gt; 4    111        Alto Minho</span></span>
+<span><span class="co">#&gt; 5   1601 Arcos de Valdevez</span></span>
+<span><span class="co">#&gt; 6 160101  Aboim das Choças</span></span>
 <span></span>
 <span><span class="co"># Fetch OD mobility records for a specific region ID (e.g., "PT" or "0603")</span></span>
 <span><span class="va">od_data</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/census_od.html">census_od</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"PT"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">od_data</span><span class="op">)</span></span></code></pre></div>
+<span><span class="co">#&gt; IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021</span></span>
+<span><span class="co">#&gt; MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&amp;lingua=PT</span></span>
+<span><span class="co">#&gt; DataExtracao: 2026-08-27T12:20:21.982+01:00</span></span>
+<span><span class="co">#&gt; DataUltimoAtualizacao: 2022-11-23</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">od_data</span><span class="op">)</span></span>
+<span><span class="co">#&gt;   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5                  dim_5_t</span></span>
+<span><span class="co">#&gt; 1     PT Portugal     2       M     2 Estudante 40511      Vila Velha de Ródão</span></span>
+<span><span class="co">#&gt; 2     PT Portugal     2       M     2 Estudante 44401   Santa Cruz da Graciosa</span></span>
+<span><span class="co">#&gt; 3     PT Portugal     T      HM     2 Estudante 44401   Santa Cruz da Graciosa</span></span>
+<span><span class="co">#&gt; 4     PT Portugal     1       H     2 Estudante 40404 Freixo de Espada à Cinta</span></span>
+<span><span class="co">#&gt; 5     PT Portugal     1       H     2 Estudante 40412                  Vinhais</span></span>
+<span><span class="co">#&gt; 6     PT Portugal     1       H     2 Estudante 44202                 Nordeste</span></span>
+<span><span class="co">#&gt;   ind_string valor Periodo</span></span>
+<span><span class="co">#&gt; 1          1     1    2011</span></span>
+<span><span class="co">#&gt; 2          1     1    2011</span></span>
+<span><span class="co">#&gt; 3          1     1    2011</span></span>
+<span><span class="co">#&gt; 4          2     2    2011</span></span>
+<span><span class="co">#&gt; 5          2     2    2011</span></span>
+<span><span class="co">#&gt; 6          2     2    2011</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="road-itinerary-toll-costs">3. Road &amp; Itinerary Toll Costs<a class="anchor" aria-label="anchor" href="#road-itinerary-toll-costs"></a>

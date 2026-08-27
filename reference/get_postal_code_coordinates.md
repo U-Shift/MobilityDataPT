@@ -60,6 +60,7 @@ Data source: Eurostat GISCO Postal Codes
 ## Examples
 
 ``` r
+# \donttest{
 MobilityDataPT::get_postal_code_coordinates(c("1000-001", "2800-001"))
 #> Downloading postal code database from https://gisco-services.ec.europa.eu/distribution/v2/pcode/gpkg/PCODE_PT_2024_4326.gpkg to /home/runner/.local/share/R/MobilityDataPT/PCODE_PT_2024_4326.gpkg
 #> Simple feature collection with 2 features and 1 field
@@ -70,4 +71,5 @@ MobilityDataPT::get_postal_code_coordinates(c("1000-001", "2800-001"))
 #>        POSTCODE                      Shape
 #> 663558 2800-001 POINT (-9.160344 38.68097)
 #> 675430 1000-001  POINT (-9.13881 38.73317)
+# }
 ```

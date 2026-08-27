@@ -17,7 +17,7 @@ A `data.frame` with columns `id` and `name`.
 ## Note
 
 Data source: Instituto Nacional de Estatística (INE)
-(<https://www.ine.pt/>).
+(<https://www.ine.pt/xportal/xmain?xpgid=ine_main&xpid=INE>).
 
 ## See also
 
@@ -26,8 +26,17 @@ Data source: Instituto Nacional de Estatística (INE)
 ## Examples
 
 ``` r
-if (FALSE) { # tryCatch({     con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10))     close(con)     TRUE }, error = function(e) FALSE)
+# \donttest{
 regions <- MobilityDataPT::census_od_regions()
+#> DataExtracao: 2026-08-27T12:19:02.521+01:00
+#> DataUltimoAtualizacao: 2022-11-23
 head(regions)
-}
+#>       id              name
+#> 1     PT          Portugal
+#> 2      1        Continente
+#> 3     11             Norte
+#> 4    111        Alto Minho
+#> 5   1601 Arcos de Valdevez
+#> 6 160101  Aboim das Choças
+# }
 ```

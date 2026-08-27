@@ -47,7 +47,7 @@ Eurostat GISCO postal code database."><meta property="og:image" content="https:/
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
       <img src="../logo.png" class="logo" alt=""><h1>Get Postal Code coordinates</h1>
-      <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/v1.0/R/postal_code_database.R" class="external-link"><code>R/postal_code_database.R</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/U-Shift/MobilityDataPT/blob/main/R/postal_code_database.R" class="external-link"><code>R/postal_code_database.R</code></a></small>
       <div class="d-none name"><code>get_postal_code_coordinates.Rd</code></div>
     </div>
 
@@ -110,7 +110,8 @@ to return all countries.</p></dd>
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu">get_postal_code_coordinates</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1000-001"</span>, <span class="st">"2800-001"</span><span class="op">)</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="co"># \donttest{</span></span></span>
+<span class="r-in"><span><span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu">get_postal_code_coordinates</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"1000-001"</span>, <span class="st">"2800-001"</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Downloading postal code database from https://gisco-services.ec.europa.eu/distribution/v2/pcode/gpkg/PCODE_PT_2024_4326.gpkg to /home/runner/.local/share/R/MobilityDataPT/PCODE_PT_2024_4326.gpkg</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Simple feature collection with 2 features and 1 field</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Geometry type: POINT</span>
@@ -120,6 +121,7 @@ to return all countries.</p></dd>
 <span class="r-out co"><span class="r-pr">#&gt;</span>        POSTCODE                      Shape</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 663558 2800-001 POINT (-9.160344 38.68097)</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 675430 1000-001  POINT (-9.13881 38.73317)</span>
+<span class="r-in"><span><span class="co"># }</span></span></span>
 <span class="r-in"><span></span></span>
 </code></pre></div>
     </div>
