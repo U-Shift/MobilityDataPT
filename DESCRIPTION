@@ -1,5 +1,5 @@
 Package: MobilityDataPT
-Title: Get mobility related data for Portugal
+Title: Get Mobility Related Data for Portugal
 Version: 1.0
 Authors@R: 
     person(c("Gonçalo", "F."), "Matos", , "goncaloafmatos@tecnico.pt", role = c("aut", "cre"),
@@ -24,4 +24,4 @@ Suggests:
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.1.0

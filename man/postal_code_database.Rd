@@ -43,8 +43,10 @@ environment variable, defaulting to \code{~/.local/share/R/MobilityDataPT}.
 Data source: Eurostat GISCO Postal Codes (\url{https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/postal-codes}).
 }
 \examples{
+\donttest{
 db <- MobilityDataPT::postal_code_database()
 
 db |> dplyr::select(POSTCODE, LAU_NAME, Shape) |> dplyr::sample_n(5)
+}
 
 }
