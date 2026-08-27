@@ -8,8 +8,10 @@
 #' @return A \code{data.frame} with columns \code{id} and \code{name}.
 #'
 #' @examplesIf tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)
+#' \donttest{
 #' regions <- MobilityDataPT::census_od_regions()
 #' head(regions)
+#' }
 #'
 #' @seealso \code{MobilityDataPT::census_od()}
 #'
@@ -94,8 +96,10 @@ census_od_regions <- function() {
 #'   }
 #'
 #' @examplesIf tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)
+#' \donttest{
 #' od_data <- MobilityDataPT::census_od(id = "PT")
 #' od_data |> dplyr::sample_n(5)
+#' }
 #'
 #'
 #'
