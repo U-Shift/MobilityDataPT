@@ -28,7 +28,7 @@ Data source: Instituto Nacional de Estatística (INE)
 ``` r
 # \donttest{
 regions <- MobilityDataPT::census_od_regions()
-#> DataExtracao: 2026-08-27T12:19:02.521+01:00
+#> DataExtracao: 2026-09-02T16:22:31.205+01:00
 #> DataUltimoAtualizacao: 2022-11-23
 head(regions)
 #>       id              name

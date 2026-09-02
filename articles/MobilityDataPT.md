@@ -78,7 +78,7 @@ home-to-study mobility flows:
 
 # Fetch available region filtering options
 regions <- MobilityDataPT::census_od_regions()
-#> DataExtracao: 2026-08-27T12:20:20.423+01:00
+#> DataExtracao: 2026-09-02T16:23:43.630+01:00
 #> DataUltimoAtualizacao: 2022-11-23
 head(regions)
 #>       id              name
@@ -93,7 +93,7 @@ head(regions)
 od_data <- MobilityDataPT::census_od(id = "PT")
 #> IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021
 #> MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&lingua=PT
-#> DataExtracao: 2026-08-27T12:20:21.982+01:00
+#> DataExtracao: 2026-09-02T16:23:45.632+01:00
 #> DataUltimoAtualizacao: 2022-11-23
 head(od_data)
 #>   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5                  dim_5_t

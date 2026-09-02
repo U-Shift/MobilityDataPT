@@ -64,7 +64,7 @@ Data source: Instituto Nacional de Estatística (INE)
 od_data <- MobilityDataPT::census_od(id = "PT")
 #> IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021
 #> MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&lingua=PT
-#> DataExtracao: 2026-08-27T12:18:57.441+01:00
+#> DataExtracao: 2026-09-02T16:22:26.616+01:00
 #> DataUltimoAtualizacao: 2022-11-23
 od_data |> dplyr::sample_n(5)
 #>   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5             dim_5_t
