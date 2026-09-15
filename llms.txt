@@ -5,8 +5,14 @@ mobility related data for Portugal.
 
 ## Installation
 
-You can install the development version of **MobilityDataPT** from
-[GitHub](https://github.com/) with:
+You can install the stable version of **MobilityDataPT** from CRAN:
+
+``` r
+
+install.packages('MobilityDataPT')
+```
+
+For the development version, fetch from GitHub:
 
 ``` r
 

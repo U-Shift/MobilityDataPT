@@ -87,16 +87,19 @@
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>You can install the development version of
-<code>MobilityDataPT</code> from GitHub with:</p>
+<p>You can install the stable version of <strong>MobilityDataPT</strong>
+from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">'MobilityDataPT'</span><span class="op">)</span></span></code></pre></div>
+<p>For the development version, fetch from GitHub:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
 <span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"U-Shift/MobilityDataPT"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="load-the-package">Load the package<a class="anchor" aria-label="anchor" href="#load-the-package"></a>
 </h2>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/U-Shift/MobilityDataPT" class="external-link">MobilityDataPT</a></span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
@@ -107,7 +110,7 @@
 </h3>
 <p>Access Eurostat GISCO postal code datasets and spatial coordinates
 for Portugal or other EU countries:</p>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Download and access full postal code database for Portugal</span></span>
 <span><span class="va">db</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/postal_code_database.html">postal_code_database</a></span><span class="op">(</span>cntr_id <span class="op">=</span> <span class="st">"PT"</span>, year <span class="op">=</span> <span class="fl">2024</span>, crs <span class="op">=</span> <span class="fl">4326</span><span class="op">)</span></span>
 <span><span class="va">db</span> <span class="op">|&gt;</span></span>
@@ -154,10 +157,10 @@ for Portugal or other EU countries:</p>
 </h3>
 <p>Retrieve INE Census 2021 Origin-Destination data for home-to-work and
 home-to-study mobility flows:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># Fetch available region filtering options</span></span>
 <span><span class="va">regions</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/census_od_regions.html">census_od_regions</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; DataExtracao: 2026-09-02T16:23:43.630+01:00</span></span>
+<span><span class="co">#&gt; DataExtracao: 2026-09-15T17:29:34.651+01:00</span></span>
 <span><span class="co">#&gt; DataUltimoAtualizacao: 2022-11-23</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">regions</span><span class="op">)</span></span>
 <span><span class="co">#&gt;       id              name</span></span>
@@ -172,7 +175,7 @@ home-to-study mobility flows:</p>
 <span><span class="va">od_data</span> <span class="op">&lt;-</span> <span class="fu">MobilityDataPT</span><span class="fu">::</span><span class="fu"><a href="../reference/census_od.html">census_od</a></span><span class="op">(</span>id <span class="op">=</span> <span class="st">"PT"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; IndicadorDsg: População residente empregada ou estudante (N.º) por Local de residência à data dos Censos [2021] (NUTS - 2013), Sexo, Condição perante o trabalho e Local de trabalho ou estudo; Decenal - INE, Recenseamento da população e habitação - Censos 2021</span></span>
 <span><span class="co">#&gt; MetaInfUrl: https://www.ine.pt/bddXplorer/htdocs/minfo.jsp?var_cd=0011702&amp;lingua=PT</span></span>
-<span><span class="co">#&gt; DataExtracao: 2026-09-02T16:23:45.632+01:00</span></span>
+<span><span class="co">#&gt; DataExtracao: 2026-09-15T17:29:36.321+01:00</span></span>
 <span><span class="co">#&gt; DataUltimoAtualizacao: 2022-11-23</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">head</a></span><span class="op">(</span><span class="va">od_data</span><span class="op">)</span></span>
 <span><span class="co">#&gt;   geocod   geodsg dim_3 dim_3_t dim_4   dim_4_t dim_5                  dim_5_t</span></span>
@@ -196,7 +199,7 @@ home-to-study mobility flows:</p>
 <p>Calculate expected toll costs across vehicle classes (C1, C2, C3, C4)
 for spatial route itineraries using the Infraestruturas de Portugal API
 service:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">sf_itinerary</span> <span class="op">&lt;-</span> <span class="fu">sf</span><span class="fu">::</span><span class="fu"><a href="https://r-spatial.github.io/sf/reference/st_read.html" class="external-link">st_read</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/system.file.html" class="external-link">system.file</a></span><span class="op">(</span><span class="st">"extdata/samples"</span>,</span>
 <span>  <span class="st">"tool_itinerary_25AbrilBridge.gpkg"</span>,</span>
 <span>  package <span class="op">=</span> <span class="st">"MobilityDataPT"</span></span>
