@@ -25,9 +25,11 @@
 #'   }
 #'
 #' @examples
+#' \donttest{
 #' db <- MobilityDataPT::postal_code_database()
 #'
 #' db |> dplyr::select(POSTCODE, LAU_NAME, Shape) |> dplyr::sample_n(5)
+#' }
 #'
 #' @importFrom sf st_read
 #' @importFrom utils download.file
@@ -102,7 +104,9 @@ postal_code_database <- function(cntr_id = "PT", year = 2024, crs = 4326, downlo
 #' @return An \code{sf} object containing matching postal code records and geometries.
 #'
 #' @examples
+#' \donttest{
 #' MobilityDataPT::get_postal_code_coordinates(c("1000-001", "2800-001"))
+#' }
 #'
 #' @seealso \code{MobilityDataPT::postal_code_database()}
 #'

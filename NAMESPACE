@@ -6,17 +6,23 @@ export(get_postal_code_coordinates)
 export(postal_code_database)
 export(tools_for_itinerary)
 importFrom(dplyr,select)
-importFrom(httr,GET)
-importFrom(httr,POST)
-importFrom(httr,RETRY)
-importFrom(httr,add_headers)
-importFrom(httr,content)
-importFrom(httr,http_error)
-importFrom(httr,status_code)
-importFrom(jsonlite,fromJSON)
-importFrom(jsonlite,toJSON)
-importFrom(sf,st_coordinates)
-importFrom(sf,st_geometry)
-importFrom(sf,st_read)
+importFrom(httr,
+  GET,
+  POST,
+  RETRY,
+  add_headers,
+  content,
+  http_error,
+  status_code
+)
+importFrom(jsonlite,
+  fromJSON,
+  toJSON
+)
+importFrom(sf,
+  st_coordinates,
+  st_geometry,
+  st_read
+)
 importFrom(tidyselect,any_of)
 importFrom(utils,download.file)

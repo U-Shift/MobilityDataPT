@@ -14,12 +14,14 @@ Queries the INE metadata API for the available regional filtering options
 available for \code{MobilityDataPT::census_od()}.
 }
 \note{
-Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/}).
+Data source: Instituto Nacional de Estatística (INE) (\url{https://www.ine.pt/xportal/xmain?xpgid=ine_main&xpid=INE}).
 }
 \examples{
 \dontshow{if (tryCatch({con <- suppressWarnings(socketConnection("www.ine.pt", port = 443, timeout = 10)); close(con); TRUE}, error = function(e) FALSE)) withAutoprint(\{ # examplesIf}
+\donttest{
 regions <- MobilityDataPT::census_od_regions()
 head(regions)
+}
 \dontshow{\}) # examplesIf}
 }
 \seealso{

@@ -1,10 +1,10 @@
 Package: MobilityDataPT
-Title: Get mobility related data for Portugal
-Version: 0.0
+Title: Get Mobility Related Data for Portugal
+Version: 1.0
 Authors@R: 
     person(c("Gonçalo", "F."), "Matos", , "goncaloafmatos@tecnico.pt", role = c("aut", "cre"),
            comment = c(ORCID = "0009-0001-3489-1732"))
-Description: This package provides a collection of methods to get mobility related data for Portugal.
+Description: A collection of methods to get mobility related data for Portugal.
 License: GPL
 URL: https://github.com/U-Shift/MobilityDataPT, 
     https://u-shift.github.io/MobilityDataPT/
@@ -24,4 +24,4 @@ Suggests:
 Encoding: UTF-8
 Language: en-US
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.3
+Config/roxygen2/version: 8.1.0

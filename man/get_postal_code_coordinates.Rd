@@ -38,7 +38,9 @@ Eurostat GISCO postal code database.
 Data source: Eurostat GISCO Postal Codes (\url{https://ec.europa.eu/eurostat/web/gisco/geodata/administrative-units/postal-codes}).
 }
 \examples{
+\donttest{
 MobilityDataPT::get_postal_code_coordinates(c("1000-001", "2800-001"))
+}
 
 }
 \seealso{
