@@ -1,7 +1,9 @@
 # MobilityDataPT <img align="right" src="man/figures/logo.png" alt="logo" width="180">
 
 <!-- badges: start -->
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21837258.svg)](https://doi.org/10.5281/zenodo.21837258)
+[![CRAN status](https://www.r-pkg.org/badges/version/MobilityDataPT)](https://cran.r-project.org/package=MobilityDataPT/)
+[![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active) 
+[![CRAN downloads total](https://cranlogs.r-pkg.org/badges/grand-total/MobilityDataPT?color=lightgrey)](https://cran.r-project.org/package=MobilityDataPT)
 [![](https://github.com/U-Shift/MobilityDataPT/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/U-Shift/MobilityDataPT/actions/workflows/R-CMD-check.yaml) 
 [![codecov](https://codecov.io/gh/U-Shift/MobilityDataPT/graph/badge.svg?token=IK34VDXDZ5)](https://app.codecov.io/gh/U-Shift/MobilityDataPT)
 <!-- badges: end -->
@@ -10,8 +12,13 @@
 
 ## Installation
 
-You can install the development version of **MobilityDataPT** from
-[GitHub](https://github.com/) with:
+You can install the stable version of **MobilityDataPT** from CRAN:
+
+``` r
+install.packages('MobilityDataPT')
+```
+
+For the development version, fetch from GitHub:
 
 ``` r
 # install.packages("remotes")

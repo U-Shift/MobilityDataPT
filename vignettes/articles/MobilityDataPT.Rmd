@@ -17,7 +17,15 @@ ine_is_reachable <- tryCatch({
 
 # Installation
 
-You can install the development version of `MobilityDataPT` from GitHub with:
+
+You can install the stable version of **MobilityDataPT** from CRAN:
+
+```{r, eval=FALSE}
+install.packages('MobilityDataPT')
+```
+
+For the development version, fetch from GitHub:
+
 ```{r, eval=FALSE}
 # install.packages("remotes")
 remotes::install_github("U-Shift/MobilityDataPT")
