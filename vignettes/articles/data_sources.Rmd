@@ -23,3 +23,8 @@ This package interfaces with and retrieves data from public APIs and open data r
 - **[Infraestruturas de Portugal](https://portagens.infraestruturasdeportugal.pt/)**: Toll calculation services across Portuguese highway networks
 
 > `MobilityDataPT::tools_for_itinerary()`
+
+- **[Federação Portuguesa do Táxi (FPTaxi)](https://fptaxi.pt/simulador-fptaxi/)**: Taxi routing and regulated tariff simulation across Portugal
+
+> `MobilityDataPT::taxi_fare_for_itinerary()`
+
