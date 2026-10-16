@@ -4,6 +4,7 @@ export(census_od)
 export(census_od_regions)
 export(get_postal_code_coordinates)
 export(postal_code_database)
+export(taxi_fare_for_itinerary)
 export(tools_for_itinerary)
 importFrom(dplyr,select)
 importFrom(httr,
@@ -13,7 +14,8 @@ importFrom(httr,
   add_headers,
   content,
   http_error,
-  status_code
+  status_code,
+  stop_for_status
 )
 importFrom(jsonlite,
   fromJSON,
@@ -22,7 +24,10 @@ importFrom(jsonlite,
 importFrom(sf,
   st_coordinates,
   st_geometry,
-  st_read
+  st_linestring,
+  st_read,
+  st_sf,
+  st_sfc
 )
 importFrom(tidyselect,any_of)
 importFrom(utils,download.file)
