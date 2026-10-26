@@ -2,81 +2,102 @@
 % Please edit documentation in R/taxi_fare_for_itinerary.R
 \name{taxi_fare_for_itinerary}
 \alias{taxi_fare_for_itinerary}
-\title{Estimate taxi route, travel time, tolls, and regulated fare in Portugal}
+\title{Estimate regulated taxi fare in Portugal for an itinerary}
 \usage{
 taxi_fare_for_itinerary(
-  origin_lat,
-  origin_lon,
-  dest_lat,
-  dest_lon,
-  departure = Sys.time() + 600,
+  distance_km,
+  duration_sec = 0,
+  departure = Sys.time(),
   tariff = c("t1", "t2", "td"),
   booking = TRUE,
   luggage = 0,
-  include_tolls = TRUE
+  cost_tolls = 0
 )
 }
 \arguments{
-\item{origin_lat}{Numeric. Origin latitude in decimal degrees (WGS84 / EPSG:4326).}
+\item{distance_km}{Numeric or \code{sf} object. Route distance in kilometers. If an \code{sf}
+or \code{sfc} object is provided, distance is computed automatically using \code{sf::st_length()}.}
 
-\item{origin_lon}{Numeric. Origin longitude in decimal degrees (WGS84 / EPSG:4326).}
-
-\item{dest_lat}{Numeric. Destination latitude in decimal degrees (WGS84 / EPSG:4326).}
-
-\item{dest_lon}{Numeric. Destination longitude in decimal degrees (WGS84 / EPSG:4326).}
+\item{duration_sec}{Numeric. Estimated route travel time in seconds. Defaults to \code{0}.
+Note that omitting duration will calculate fare assuming no congestion or waiting time.}
 
 \item{departure}{POSIXct or character string (\code{"YYYY-MM-DDTHH:MM"}) with departure date and time.
-Note: TomTom uses historical hourly traffic profiles when \code{departure} is in the future.}
+Defaults to \code{Sys.time()}. Note that departure time determines tariff multipliers
+(\code{f_ajuste}) for night, weekend, and holiday periods.}
 
 \item{tariff}{Character. Vehicle tariff class: \code{"t1"} (up to 4 passengers, default),
 \code{"t2"} (>4 passengers), or \code{"td"} (unmarked vehicle).}
 
-\item{booking}{Logical. Whether to include the booking/call supplement (\code{0.80} EUR). Default is \code{TRUE}.}
+\item{booking}{Logical. Whether to include the booking/dispatch supplement (\code{0.80} EUR). Default is \code{TRUE}.}
 
-\item{luggage}{Numeric. Optional luggage supplement in EUR. Default is \code{0}.}
+\item{luggage}{Numeric. Luggage supplement in EUR. Default is \code{0}.}
 
-\item{include_tolls}{Logical. If \code{TRUE}, computes Class 1 (\code{C1}) tolls along the route
-using \code{\link{tools_for_itinerary}}. Default is \code{TRUE}.}
+\item{cost_tolls}{Numeric. Toll costs in EUR (e.g. obtained via \code{\link{tools_for_itinerary}}). Default is \code{0}.}
 }
 \value{
-An \code{sf} data frame (\code{EPSG:4326}) with one row containing the route
-\code{LINESTRING} geometry and the following columns:
+A \code{data.frame} (or \code{sf} object if an \code{sf} object was passed to \code{distance_km})
+containing:
 \itemize{
 \item \code{distance_km}: Route distance in kilometers.
-\item \code{duration_sec}: Estimated travel time in seconds (accounting for traffic).
+\item \code{duration_sec}: Travel time in seconds.
 \item \code{f_ajuste}: Time-of-day/day-type tariff multiplier (\code{1.00}, \code{1.25}, \code{1.50}, or \code{1.75}).
 \item \code{flag_drop}: Initial flag drop fee (\code{bandeirada}) in Euros.
 \item \code{cost_distance}: Distance component in Euros (including progressive distance tiers).
 \item \code{cost_time}: Time component in Euros.
 \item \code{cost_booking}: Booking supplement in Euros.
 \item \code{cost_luggage}: Luggage supplement in Euros.
-\item \code{cost_tolls}: Class 1 (\code{C1}) toll cost in Euros.
+\item \code{cost_tolls}: Highway toll costs in Euros.
 \item \code{total_cost}: Final estimated taxi fare in Euros.
 \item \code{total_amt}: Reference fare under current AMT regulation (Art. 16-1) in Euros.
 }
 }
 \description{
-Encapsulates the routing and tariff calculation functionality provided by the
-\href{https://fptaxi.pt/simulador-fptaxi/}{Federação Portuguesa do Táxi (FPTaxi)} simulator
-(powered by TomTom traffic profiles) and optionally estimates Class 1 (\code{C1}) highway tolls
-via \code{\link{tools_for_itinerary}}.
+Encapsulates the tariff calculation web service provided by the
+\href{https://fptaxi.pt/simulador-fptaxi/}{Federação Portuguesa do Táxi (FPTaxi)} simulator,
+calculating regulated taxi fares under Portuguese regulations.
+}
+\details{
+\bold{Routing & traffic considerations:}
+
+Regulated taxi fares in Portugal comprise both a distance component and a time component (applicable when
+the vehicle moves below the changeover speed or is stopped in traffic).
+
+To compute an itinerary's distance and duration, users can rely on open-source routing engines,
+such as OpenRouteService (via the \code{openrouteservice} R package) or OSRM
+(via the \code{osrm} R package).
+
+Minf that free-flow or static open-source routing profiles do not
+account for traffic congestion or rush-hour speed decays. Because regulated taxi meters charge
+by time during delays, using free-flow durations (\code{duration_sec}) can significantly underestimate
+final fares during peak hours. For high-accuracy estimates, especially in congested urban areas,
+consider obtaining travel durations from routing services that incorporate real-time or historical
+traffic profiles (such as TomTom, Google Maps, or HERE).
+
+\bold{Highway tolls:}
+
+Highway toll costs are not automatically included. If your itinerary involves toll roads,
+you can calculate Class 1 (\code{C1}) toll amounts using \code{\link{tools_for_itinerary}}
+and supply the result to the \code{cost_tolls} parameter.
 }
 \note{
-Data source: Federação Portuguesa do Táxi (\url{https://fptaxi.pt/simulador-fptaxi/})
-and Infraestruturas de Portugal (\url{https://portagens.infraestruturasdeportugal.pt/}).
+Data source: Federação Portuguesa do Táxi (\url{https://fptaxi.pt/simulador-fptaxi/}).
 Terms of service apply.
 }
 \examples{
 \donttest{
+# Calculate fare for a 15 km trip taking 25 minutes (1500 seconds)
 res <- MobilityDataPT::taxi_fare_for_itinerary(
-    origin_lat = 38.76862,
-    origin_lon = -9.12825,
-    dest_lat   = 38.73004,
-    dest_lon   = -9.14406,
-    departure  = Sys.time() + 3600,
-    include_tolls = FALSE
+    distance_km  = 15,
+    duration_sec = 1500,
+    departure    = Sys.time() + 3600,
+    tariff       = "t1",
+    booking      = TRUE,
+    cost_tolls   = 0
 )
 print(res)
 }
 
+}
+\seealso{
+\code{\link{tools_for_itinerary}}
 }

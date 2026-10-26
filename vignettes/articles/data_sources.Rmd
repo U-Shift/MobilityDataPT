@@ -24,7 +24,7 @@ This package interfaces with and retrieves data from public APIs and open data r
 
 > `MobilityDataPT::tools_for_itinerary()`
 
-- **[Federação Portuguesa do Táxi (FPTaxi)](https://fptaxi.pt/simulador-fptaxi/)**: Taxi routing and regulated tariff simulation across Portugal
+- **[Federação Portuguesa do Táxi (FPTaxi)](https://fptaxi.pt/simulador-fptaxi/)**: Regulated taxi tariff simulation across Portugal
 
 > `MobilityDataPT::taxi_fare_for_itinerary()`
 
