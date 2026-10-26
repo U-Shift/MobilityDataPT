@@ -20,6 +20,7 @@ reference:
   - title: Road data
     contents:
     - tools_for_itinerary
+    - taxi_fare_for_itinerary
 articles:
   - title: Articles
     navbar: ~
