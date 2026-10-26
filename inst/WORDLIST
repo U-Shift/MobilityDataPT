@@ -1,3 +1,4 @@
+ANTRAL
 Acknowledgement
 CERIS
 EPSG
@@ -5,6 +6,7 @@ Empregada
 Estatística
 Estudante
 Eurostat
+FPT
 FPTaxi
 Federação
 GISCO
@@ -17,7 +19,7 @@ OSRM
 OpenRouteService
 POSIXct
 Portuguesa
-Regulamento
+Proposta
 TomTom
 Táxi
 Técnico
@@ -25,4 +27,3 @@ codecov
 de
 durations
 freguesia
-nº

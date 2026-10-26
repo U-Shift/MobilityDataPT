@@ -1,6 +1,6 @@
 library(testthat)
 
-test_that("taxi_fare_for_itinerary returns expected data.frame and fare components", {
+test_that("taxi_fare_for_itinerary returns expected data.frame and AMT fare", {
     skip_on_cran()
 
     result <- taxi_fare_for_itinerary(
@@ -16,18 +16,10 @@ test_that("taxi_fare_for_itinerary returns expected data.frame and fare componen
     expect_s3_class(result, "data.frame")
     expect_false(inherits(result, "sf"))
     expect_equal(nrow(result), 1)
-    expect_true(all(c(
-        "distance_km", "duration_sec", "f_ajuste", "flag_drop",
-        "cost_distance", "cost_time", "cost_booking", "cost_luggage",
-        "cost_tolls", "total_cost", "total_amt"
-    ) %in% names(result)))
+    expect_equal(names(result), c("distance_km", "duration_sec", "total_amt"))
     expect_equal(result$distance_km, 16.883)
     expect_equal(result$duration_sec, 1630)
-    expect_equal(result$cost_luggage, 1.60)
-    expect_equal(result$cost_tolls, 2.25)
-    expect_gt(result$cost_distance, 0)
-    expect_gt(result$cost_time, 0)
-    expect_gt(result$total_cost, 0)
+    expect_gt(result$total_amt, 0)
 })
 
 test_that("taxi_fare_for_itinerary works with sf itinerary object and character departure", {
@@ -39,7 +31,7 @@ test_that("taxi_fare_for_itinerary works with sf itinerary object and character 
         departure    = "2026-10-26T17:00"
     )
     expect_s3_class(result_char, "data.frame")
-    expect_gt(result_char$total_cost, 0)
+    expect_gt(result_char$total_amt, 0)
 
     sample_file <- system.file("extdata/samples", "tool_itinerary_25AbrilBridge.gpkg", package = "MobilityDataPT")
     if (file.exists(sample_file)) {
@@ -52,6 +44,7 @@ test_that("taxi_fare_for_itinerary works with sf itinerary object and character 
         expect_s3_class(result, "sf")
         expect_equal(nrow(result), 1)
         expect_gt(result$distance_km, 0)
+        expect_gt(result$total_amt, 0)
     }
 })
 

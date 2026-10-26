@@ -14,7 +14,7 @@
 #' such as OpenRouteService (via the \code{openrouteservice} R package) or OSRM
 #' (via the \code{osrm} R package).
 #'
-#' Minf that free-flow or static open-source routing profiles do not
+#' Mind that free-flow or static open-source routing profiles do not
 #' account for traffic congestion or rush-hour speed decays. Because regulated taxi meters charge
 #' by time during delays, using free-flow durations (\code{duration_sec}) can significantly underestimate
 #' final fares during peak hours. For high-accuracy estimates, especially in congested urban areas,
@@ -28,7 +28,9 @@
 #' and supply the result to the \code{cost_tolls} parameter.
 #'
 #' @note Data source: Federação Portuguesa do Táxi (\url{https://fptaxi.pt/simulador-fptaxi/}).
-#'   Terms of service apply.
+#'   Terms of service apply. While the web interface presents detailed breakdown metrics based
+#'   on proposed tariffs (Proposta FPT/ANTRAL), this function exclusively computes and returns
+#'   the legally binding fare established under AMT regulations (\code{total_amt}).
 #'
 #' @param distance_km Numeric or \code{sf} object. Route distance in kilometers. If an \code{sf}
 #'   or \code{sfc} object is provided, distance is computed automatically using \code{sf::st_length()}.
@@ -48,15 +50,7 @@
 #'   \itemize{
 #'     \item \code{distance_km}: Route distance in kilometers.
 #'     \item \code{duration_sec}: Travel time in seconds.
-#'     \item \code{f_ajuste}: Time-of-day/day-type tariff multiplier (\code{1.00}, \code{1.25}, \code{1.50}, or \code{1.75}).
-#'     \item \code{flag_drop}: Initial flag drop fee (\code{bandeirada}) in Euros.
-#'     \item \code{cost_distance}: Distance component in Euros (including progressive distance tiers).
-#'     \item \code{cost_time}: Time component in Euros.
-#'     \item \code{cost_booking}: Booking supplement in Euros.
-#'     \item \code{cost_luggage}: Luggage supplement in Euros.
-#'     \item \code{cost_tolls}: Highway toll costs in Euros.
-#'     \item \code{total_cost}: Final estimated taxi fare in Euros.
-#'     \item \code{total_amt}: Reference fare under current AMT regulation (Art. 16-1) in Euros.
+#'     \item \code{total_amt}: Estimated regulated taxi fare under current AMT regulation in Euros.
 #'   }
 #'
 #' @examples
@@ -142,28 +136,12 @@ taxi_fare_for_itinerary <- function(distance_km,
         simplifyVector = FALSE
     )
 
-    flag_drop <- as.numeric(price_data$band)
-    cost_distance <- as.numeric(price_data$dist$total)
-    cost_time <- as.numeric(price_data$valorTempo)
-    f_ajuste <- as.numeric(price_data$fajusteMedio)
-    cost_booking <- as.numeric(price_data$reserva)
-    cost_luggage <- as.numeric(luggage)
-    toll_val <- as.numeric(cost_tolls)
-    total_cost <- round(flag_drop + cost_distance + cost_time + cost_booking + cost_luggage + toll_val, 2)
-    total_amt <- round(as.numeric(price_data$totalAMT) + cost_luggage, 2)
+    total_amt <- round(as.numeric(price_data$totalAMT) + as.numeric(luggage), 2)
 
     out <- data.frame(
-        distance_km   = as.numeric(distance_km),
-        duration_sec  = as.numeric(duration_sec),
-        f_ajuste      = f_ajuste,
-        flag_drop     = flag_drop,
-        cost_distance = cost_distance,
-        cost_time     = cost_time,
-        cost_booking  = cost_booking,
-        cost_luggage  = cost_luggage,
-        cost_tolls    = toll_val,
-        total_cost    = total_cost,
-        total_amt     = total_amt
+        distance_km  = as.numeric(distance_km),
+        duration_sec = as.numeric(duration_sec),
+        total_amt    = total_amt
     )
 
     if (!is.null(route_geom)) {
