@@ -24,10 +24,9 @@ importFrom(jsonlite,
 importFrom(sf,
   st_coordinates,
   st_geometry,
-  st_linestring,
+  st_length,
   st_read,
-  st_sf,
-  st_sfc
+  st_sf
 )
 importFrom(tidyselect,any_of)
 importFrom(utils,download.file)
